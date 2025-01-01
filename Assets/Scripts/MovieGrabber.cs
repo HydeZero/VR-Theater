@@ -28,6 +28,6 @@ public class MovieGrabber : MonoBehaviour
     // Ask the user to select an MP4 file to play
     public void AskForFile()
     {
-        NativeFilePicker.PickFile(SavePathAndSwitchScene, "movie/mp4");
+        NativeFilePicker.PickFile(SavePathAndSwitchScene);
     }
 }
