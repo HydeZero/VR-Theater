@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 290175175}
   - component: {fileID: 290175174}
   m_Layer: 0
-  m_Name: Point Light
+  m_Name: TheaterLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -639,8 +639,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 535.8
-  m_Range: 47.427116
+  m_Intensity: 1000
+  m_Range: 60
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -888,7 +888,7 @@ Transform:
   m_GameObject: {fileID: 628132109}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -28.5, y: 21.4, z: -29.5}
+  m_LocalPosition: {x: -28, y: 21.4, z: -29.5}
   m_LocalScale: {x: 2, y: 37, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1284,7 +1284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &923510363
 Transform:
   m_ObjectHideFlags: 0
@@ -2688,8 +2688,8 @@ Transform:
   m_GameObject: {fileID: 1886536522}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.5, y: 20, z: -29.5}
-  m_LocalScale: {x: 57, y: 40, z: 1}
+  m_LocalPosition: {x: 1, y: 20, z: -29.5}
+  m_LocalScale: {x: 56, y: 40, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1565620460}
