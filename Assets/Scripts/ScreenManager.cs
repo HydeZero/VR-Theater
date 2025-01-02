@@ -30,6 +30,13 @@ public class ScreenManager : MonoBehaviour
             Debug.Log("VideoPlayer URL was unable to be set to the movie path");
             Application.Quit(); // Exit the application if the video player URL cannot be set
         }
+
+        // do some final setup for the video player
+        videoPlayer.Prepare();
+        videoPlayer.controlledAudioTrackCount = 1;
+        videoPlayer.EnableAudioTrack(0, true);
+        videoPlayer.SetTargetAudioSource(0, GetComponent<AudioSource>());
+        videoPlayer.Stop();
     }
 
     // Update is called once per frame
