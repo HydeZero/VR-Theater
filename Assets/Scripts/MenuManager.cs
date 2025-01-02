@@ -5,19 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    bool isMenuOpen = false;
+    public bool isMenuOpen = false;
 
-    InputAction interactAction;
+    InputAction menuAction;
 
     public GameObject FullMenu;
 
     public GameObject player;
 
-    private Vector3 offset = new Vector3(0, -1, 1.5f);
+    private Vector3 offset = new Vector3(0, -1, 2.5f);
 
     private void Start()
     {
-        interactAction = InputSystem.actions.FindAction("Interact");
+        menuAction = InputSystem.actions.FindAction("Menu");
         player = GameObject.Find("Player");
     }
 
@@ -39,13 +39,18 @@ public class MenuManager : MonoBehaviour
         FullMenu.transform.rotation = player.transform.rotation;
         if (!isMenuOpen)
         {
-            if (interactAction.WasPressedThisFrame())
+            if (menuAction.WasPressedThisFrame())
             {
                 isMenuOpen = true;
                 FullMenu.SetActive(true);
             }
+        } else if (isMenuOpen)
+        {
+            if (menuAction.WasPressedThisFrame())
+            {
+                CloseMenu();
+            }
         }
-    }
 
     public void CloseMenu()
     {
