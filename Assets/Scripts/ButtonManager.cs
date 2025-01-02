@@ -1,5 +1,6 @@
 using Google.XR.Cardboard;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Video;
@@ -7,7 +8,7 @@ using UnityEngine.Video;
 public class ButtonManager : MonoBehaviour
 {
 
-    private MenuManager menuManager;
+    private MenuManager _menuManager;
 
     public string buttonType;
 
@@ -21,7 +22,7 @@ public class ButtonManager : MonoBehaviour
     void Start()
     {
         _interactAction = InputSystem.actions.FindAction("Interact");
-        menuManager = GameObject.Find("MenuManager").GetComponent<MenuManager>();
+        _menuManager = GameObject.Find("MenuManager").GetComponent<MenuManager>();
         _screenManager = GameObject.Find("Screen").GetComponent<ScreenManager>();
     }
 
@@ -35,7 +36,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (_isActive)
         {
-            if (_interactAction.WasPressedThisFrame())
+            if (_interactAction.WasPressedThisFrame() || OnPointerClick())
             {
                 if (buttonType == "Play")
                 {
@@ -77,5 +78,10 @@ public class ButtonManager : MonoBehaviour
     public void OnPointerExit()
     {
         _isActive = false;
+    }
+
+    bool OnPointerClick()
+    {
+        return true; // basically tell the function that called this that "the button was clicked"
     }
 }
