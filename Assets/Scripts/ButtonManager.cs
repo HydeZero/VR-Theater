@@ -36,7 +36,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (_isActive)
         {
-            if (_interactAction.WasPressedThisFrame() || OnPointerClick())
+            if (_interactAction.WasPressedThisFrame())
             {
                 if (buttonType == "Play")
                 {
@@ -78,10 +78,5 @@ public class ButtonManager : MonoBehaviour
     public void OnPointerExit()
     {
         _isActive = false;
-    }
-
-    bool OnPointerClick()
-    {
-        return true; // basically tell the function that called this that "the button was clicked"
     }
 }
