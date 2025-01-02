@@ -22,6 +22,7 @@ public class ButtonManager : MonoBehaviour
     {
         interactAction = InputSystem.actions.FindAction("Interact");
         menuManager = GameObject.Find("MenuManager").GetComponent<MenuManager>();
+        screenManager = GameObject.Find("Screen").GetComponent<ScreenManager>();
     }
 
     // Update is called once per frame
