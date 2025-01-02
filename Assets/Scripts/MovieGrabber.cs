@@ -15,7 +15,7 @@ public class MovieGrabber : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        Instance = this; // this line crashes and I don't know why
+        Instance = this;
         DontDestroyOnLoad(gameObject);
     }
 

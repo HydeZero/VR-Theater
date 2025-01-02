@@ -11,18 +11,18 @@ public class ButtonManager : MonoBehaviour
 
     public string buttonType;
 
-    public ScreenManager screenManager;
+    private ScreenManager _screenManager;
 
-    InputAction interactAction;
+    private InputAction _interactAction;
 
-    bool isActive = false;
+    private bool _isActive = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        interactAction = InputSystem.actions.FindAction("Interact");
+        _interactAction = InputSystem.actions.FindAction("Interact");
         menuManager = GameObject.Find("MenuManager").GetComponent<MenuManager>();
-        screenManager = GameObject.Find("Screen").GetComponent<ScreenManager>();
+        _screenManager = GameObject.Find("Screen").GetComponent<ScreenManager>();
     }
 
     // Update is called once per frame
@@ -33,31 +33,31 @@ public class ButtonManager : MonoBehaviour
 
     IEnumerator ButtonHandler()
     {
-        if (isActive)
+        if (_isActive)
         {
-            if (interactAction.WasPressedThisFrame())
+            if (_interactAction.WasPressedThisFrame())
             {
                 if (buttonType == "Play")
                 {
-                    screenManager.Play();
+                    _screenManager.Play();
                     buttonType = "Pause";
                 }
                 else if (buttonType == "Pause")
                 {
-                    screenManager.Pause();
+                    _screenManager.Pause();
                     buttonType = "Play";
                 }
                 else if (buttonType == "Stop")
                 {
-                    screenManager.Stop();
+                    _screenManager.Stop();
                 }
                 else if (buttonType == "Fast Forward")
                 {
-                    screenManager.Forward();
+                    _screenManager.Forward();
                 }
                 else if (buttonType == "Rewind")
                 {
-                    screenManager.Rewind();
+                    _screenManager.Rewind();
                 }
                 else if (buttonType == "Recenter")
                 {
@@ -71,11 +71,11 @@ public class ButtonManager : MonoBehaviour
 
     public void OnPointerEnter()
     {
-        isActive = true;
+        _isActive = true;
     }
 
     public void OnPointerExit()
     {
-        isActive = false;
+        _isActive = false;
     }
 }

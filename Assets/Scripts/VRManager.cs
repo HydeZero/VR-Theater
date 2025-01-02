@@ -4,7 +4,7 @@ using UnityEngine;
 
 using UnityEngine.XR.Management;
 
-public class ManualXRControl : MonoBehaviour
+public class VRManager : MonoBehaviour
 {
     void Start() // this starts XR on loading the scene.
     {
@@ -28,7 +28,7 @@ public class ManualXRControl : MonoBehaviour
         }
     }
 
-    void StopXR()
+    public void StopXR()
     {
         Debug.Log("Stopping XR...");
 

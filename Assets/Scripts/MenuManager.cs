@@ -13,7 +13,7 @@ public class MenuManager : MonoBehaviour
 
     public GameObject player;
 
-    private Vector3 offset = new Vector3(0, -1, 2.5f);
+    private Vector3 _offset = new Vector3(0, -1, 2.5f);
 
     private void Start()
     {
@@ -27,7 +27,7 @@ public class MenuManager : MonoBehaviour
         Vector3 parentAngle = player.transform.eulerAngles;
 
         // Calculate the offset Position, relatively to player rotation values
-        Vector3 rotatedOffset = Quaternion.Euler(parentAngle) * offset;
+        Vector3 rotatedOffset = Quaternion.Euler(parentAngle) * _offset;
 
         // Calculate the finalPosition of the rotatedOffset, relatively to player position in world
         Vector3 finalPosition = player.transform.position + rotatedOffset;

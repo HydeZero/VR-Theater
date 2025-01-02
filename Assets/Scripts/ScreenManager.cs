@@ -4,16 +4,16 @@ using UnityEngine.SceneManagement;
 
 public class ScreenManager : MonoBehaviour
 {
-    private string url;
+    private string _url;
 
-    private VideoPlayer videoPlayer;
+    private VideoPlayer _videoPlayer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        videoPlayer = GetComponent<VideoPlayer>();
+        _videoPlayer = GetComponent<VideoPlayer>();
         try
         {
-            videoPlayer.source = VideoSource.Url;
+            _videoPlayer.source = VideoSource.Url;
         }
         catch
         {
@@ -22,8 +22,8 @@ public class ScreenManager : MonoBehaviour
         }
         try // try to set the video player URL to the selected movie
         {
-            url = "file://" + MovieGrabber.Instance.moviePath;
-            videoPlayer.url = url;
+            _url = "file://" + MovieGrabber.Instance.moviePath;
+            _videoPlayer.url = _url;
         }
         catch
         {
@@ -32,49 +32,43 @@ public class ScreenManager : MonoBehaviour
         }
 
         // do some final setup for the video player
-        videoPlayer.Prepare();
-        videoPlayer.controlledAudioTrackCount = 1;
-        videoPlayer.EnableAudioTrack(0, true);
-        videoPlayer.SetTargetAudioSource(0, GetComponent<AudioSource>());
-        videoPlayer.Stop();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _videoPlayer.Prepare();
+        _videoPlayer.controlledAudioTrackCount = 1;
+        _videoPlayer.EnableAudioTrack(0, true);
+        _videoPlayer.SetTargetAudioSource(0, GetComponent<AudioSource>());
+        _videoPlayer.Stop();
     }
 
     // Here we expose all of the basic video player functions to outside scripts
     public void Play()
     {
-        videoPlayer.Play();
+        _videoPlayer.Play();
     }
 
     public void Pause()
     {
-        videoPlayer.Pause();
+        _videoPlayer.Pause();
     }
 
     public void Restart()
     {
-        videoPlayer.Stop();
-        videoPlayer.Play();
+        _videoPlayer.Stop();
+        _videoPlayer.Play();
     }
 
     public void Stop()
     {
-        videoPlayer.Stop();
+        _videoPlayer.Stop();
     }
 
     public void Rewind()
     {
-        videoPlayer.time -= 10;
+        _videoPlayer.time -= 10;
     }
 
     public void Forward()
     {
-        videoPlayer.time += 10;
+        _videoPlayer.time += 10;
     }
 
     public void ExitMovie()
