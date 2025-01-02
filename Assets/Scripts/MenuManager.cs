@@ -44,13 +44,15 @@ public class MenuManager : MonoBehaviour
                 isMenuOpen = true;
                 FullMenu.SetActive(true);
             }
-        } else if (isMenuOpen)
+        }
+        else if (isMenuOpen)
         {
             if (menuAction.WasPressedThisFrame())
             {
                 CloseMenu();
             }
         }
+    }
 
     public void CloseMenu()
     {
