@@ -76,7 +76,7 @@ public class ChairManager : MonoBehaviour
     {
         _isSitting = false;
         Variables.ActiveScene.Set("PlayerCanMove", true);
-        player.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1); // leave the seat
+        player.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 2); // leave the seat
         playerRb.isKinematic = false;
         playerCollider.enabled = true;
     }
