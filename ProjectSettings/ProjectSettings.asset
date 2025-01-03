@@ -45,7 +45,7 @@ PlayerSettings:
   - logo: {fileID: 21300000, guid: 3098408a1bf3f8447bb4b8044620f370, type: 3}
     duration: 5
   - logo: {fileID: 1910481253, guid: 5bcaf16805a55874782c739d67d47f26, type: 3}
-    duration: 10
+    duration: 5
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
@@ -150,6 +150,7 @@ PlayerSettings:
   preloadedAssets:
   - {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   - {fileID: 11400000, guid: f26c0ac516a3b1e4aa47eeb1da39374b, type: 2}
+  - {fileID: 3360563216297193136, guid: 5def6cf038844cd42ab306bf8c089331, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -284,7 +285,7 @@ PlayerSettings:
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0
-  androidUseCustomKeystore: 0
+  androidUseCustomKeystore: 1
   m_AndroidBanners:
   - width: 320
     height: 180

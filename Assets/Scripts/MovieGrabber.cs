@@ -6,11 +6,7 @@ public class MovieGrabber : MonoBehaviour
 {
     public static MovieGrabber Instance;
 
-    public TextMeshProUGUI buttonText;
-
     public string moviePath; // The path to the movie file
-
-    NativeFilePicker.Permission permission = NativeFilePicker.CheckPermission();
 
     private void Awake()
     {
@@ -33,12 +29,6 @@ public class MovieGrabber : MonoBehaviour
     // Ask the user to select an MP4 file to play
     public void AskForFile()
     {
-        if (permission != NativeFilePicker.Permission.Granted)
-        {
-            buttonText.text = "Requesting file permissions...";
-            NativeFilePicker.RequestPermission();
-        }
-        buttonText.text = "Loading movie...";
-        NativeFilePicker.PickFile(SavePathAndSwitchScene, NativeFilePicker.ConvertExtensionToFileType("mp4"));
+        NativeFilePicker.PickFile(SavePathAndSwitchScene);
     }
 }
