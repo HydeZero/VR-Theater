@@ -6,11 +6,16 @@ public class ScreenManager : MonoBehaviour
 {
     private string _url;
 
+    private MenuManager _menuManager;
+
     private VideoPlayer _videoPlayer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _videoPlayer = GetComponent<VideoPlayer>();
+        _menuManager = GameObject.Find("MenuManager").GetComponent<MenuManager>();
+        _videoPlayer.targetTexture.Release();
+
         try
         {
             _videoPlayer.source = VideoSource.Url;
