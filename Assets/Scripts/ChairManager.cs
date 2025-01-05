@@ -66,6 +66,7 @@ public class ChairManager : MonoBehaviour
     void EnterSeat()
     {
         _isSitting = true;
+        // make sure the player doesn't collide with the chair and send them flying in whatever direction physics decides
         playerRb.isKinematic = true;
         playerCollider.enabled = false;
         player.transform.SetPositionAndRotation(new Vector3(transform.position.x, transform.position.y+.5f, transform.position.z-0.45f), new Quaternion(0, 0, 0, 0));
@@ -77,6 +78,7 @@ public class ChairManager : MonoBehaviour
         _isSitting = false;
         Variables.ActiveScene.Set("PlayerCanMove", true);
         player.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 2); // leave the seat
+        // make sure the player can collide with stuff again
         playerRb.isKinematic = false;
         playerCollider.enabled = true;
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 using UnityEngine.XR.Management;
 
+// See https://discussions.unity.com/t/toggle-between-2d-and-google-cardboard/793625/3 for the source of this code
 public class VRManager : MonoBehaviour
 {
     void Start() // this starts XR on loading the scene.

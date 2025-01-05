@@ -43,6 +43,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (_isActive)
         {
+            // TODO: Add tap capability for Cardboard
             if (_interactAction.WasPressedThisFrame())
             {
                 if (buttonType == "Play")
@@ -74,6 +75,7 @@ public class ButtonManager : MonoBehaviour
                 else if (buttonType == "Recenter")
                 {
                     yield return new WaitForSecondsRealtime(3); // give the user enough time to situate themselves before recentering
+                    // TODO: Add a on-screen countdown timer for recentering
                     Api.Recenter();
                 }
             }
