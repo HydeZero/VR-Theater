@@ -11,3 +11,8 @@ Use [this website](https://wwgc.firebaseapp.com/) to make a cardboard calibratio
 * **Cardboard SDK Version**: 1.27.0 (installed via git, [https://github.com/googlevr/cardboard-xr-plugin.git](https://github.com/googlevr/cardboard-xr-plugin.git))
 
 This used the sample scene in Google Cardboard to give myself a starting point. I modified `CardboardStartup.cs`, which was originally made by Google. I am required to disclose changes. Changes will be located in the `LIBRARIES.md` file.
+
+## Compilation Instructions
+Due to the nature of Unity Projects, the build settings should be there.
+
+You should just be able to click "Build And Run" with your phone connected and be able to compile, provided there aren't any compilation errors. Sign with a debug key. Compilations that are signed and suitable for release will be uploaded to the Releases page.
