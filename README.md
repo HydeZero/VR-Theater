@@ -19,3 +19,9 @@ This used the sample scene in Google Cardboard to give myself a starting point. 
 Due to the nature of Unity Projects, the build settings should be there. Just `git clone` and open it up. Use the "main" branch to guarantee compilation, and "Development" if you want every latest feature.
 
 You should just be able to click "Build And Run" in the android build profile with your phone connected and be able to compile, provided there aren't any compilation errors. Sign with a debug key. Compilations that are signed and suitable for release will be uploaded to the Releases page.
+
+## System Requirements
+Any reasonably modern phone should work. As a rule of thumb, any phone made after 2018 should run this.
+
+**Minimum Version of Android required** (app won't install on versions below this): Android 8.0 "Oreo"
+**Targeted Version of Android** (version app is built specifically for): 14.0
