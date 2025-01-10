@@ -2,6 +2,8 @@
 
 VR Theater is an app that allows you to view your movies in a virtual theater. It uses Google Cardboard to display a virtual theater in VR.
 
+### CURRENTLY IN BETA, NOT POLISHED AND DONE BUT WORKS
+
 You can connect a left JoyCon to your android phone and move around in the theater. It uses the Unity Input System, so other controllers might work.
 
 Use [this website](https://wwgc.firebaseapp.com/) to make a cardboard calibration profile, if needed. The QR code system doesn't work, so copy the save/load URI (click "Save And Load Viewer Preferences to get the URI) and use something like [QR Code Generator](https://www.qr-code-generator.com/) to make a QR code of it.
