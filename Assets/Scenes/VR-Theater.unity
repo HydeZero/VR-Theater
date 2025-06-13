@@ -9971,7 +9971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &923510363
 Transform:
   m_ObjectHideFlags: 0
@@ -9981,7 +9981,7 @@ Transform:
   m_GameObject: {fileID: 923510362}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6, z: 1.5}
+  m_LocalPosition: {x: 200, y: 200, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12072,6 +12072,7 @@ MonoBehaviour:
   isMenuOpen: 0
   FullMenu: {fileID: 923510362}
   player: {fileID: 907292807}
+  _videoPlayer: {fileID: 241795353}
   currentMinutes: {fileID: 1699648828}
   currentSeconds: {fileID: 775329807}
   totalMinutes: {fileID: 619576284}

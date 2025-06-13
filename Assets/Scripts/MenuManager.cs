@@ -18,7 +18,7 @@ public class MenuManager : MonoBehaviour
 
     private Vector3 _offset = new Vector3(0, -1, 2.5f);
 
-    private VideoPlayer _videoPlayer;
+    public VideoPlayer _videoPlayer;
 
     public TextMeshPro currentMinutes;
 
@@ -48,22 +48,21 @@ public class MenuManager : MonoBehaviour
         // Calculate the finalPosition of the rotatedOffset, relatively to player position in world
         Vector3 finalPosition = player.transform.position + rotatedOffset;
 
-        // Set menu position to calculated finalPosition
-        FullMenu.transform.position = finalPosition;
-
-        // Set menu rotation to player one
-        FullMenu.transform.rotation = player.transform.rotation;
         if (!isMenuOpen)
         {
             if (menuAction.WasPressedThisFrame())
             {
                 isMenuOpen = true;
-                FullMenu.SetActive(true);
                 SetTotalTimeUI(); // get the time UI every time the menu is opened
             }
         }
         else if (isMenuOpen)
         {
+            // Set menu position to calculated finalPosition
+            FullMenu.transform.position = finalPosition;
+
+            // Set menu rotation to player rotation
+            FullMenu.transform.rotation = player.transform.rotation;
             if (menuAction.WasPressedThisFrame())
             {
                 CloseMenu();
@@ -80,7 +79,11 @@ public class MenuManager : MonoBehaviour
 
     public void CloseMenu()
     {
-        FullMenu.SetActive(false);
+        // Set menu position to calculated finalPosition
+        FullMenu.transform.position = new Vector3(200,200,0);
+
+        // Set menu rotation to player one
+        FullMenu.transform.rotation = new Quaternion(0,0,0,0);
         isMenuOpen = false;
     }
 
@@ -95,8 +98,15 @@ public class MenuManager : MonoBehaviour
 
     public void SetTotalTimeUI()
     {
-        string minutes = Mathf.Floor((int)_videoPlayer.clip.length / 60).ToString("00");
-        string seconds = ((int)_videoPlayer.clip.length % 60).ToString("00");
+        // Get frame count and frame rate from the VideoPlayer. 
+        ulong frameCount = _videoPlayer.frameCount;
+        double frameRate = _videoPlayer.frameRate;
+
+        // Calculate the length in seconds. 
+        double lengthInSeconds = frameCount / frameRate;
+
+        string minutes = Mathf.Floor((int)lengthInSeconds / 60).ToString("00");
+        string seconds = ((int)lengthInSeconds % 60).ToString("00");
 
         totalMinutes.text = minutes;
         totalSeconds.text = seconds;
